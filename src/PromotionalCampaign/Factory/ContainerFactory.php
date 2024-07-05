@@ -8,6 +8,7 @@ use Pimple\Container;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
+use PromotionalCampaign\Service\PromotionEngineService;
 
 readonly class ContainerFactory
 {
@@ -40,6 +41,10 @@ readonly class ContainerFactory
                 $c['BasketService'],
                 $c['ProductRepository']
             );
+        };
+
+        $container['PromotionEngineService'] = function () {
+            return new PromotionEngineService();
         };
 
         return $container;
