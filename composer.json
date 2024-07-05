@@ -1,0 +1,23 @@
+{
+    "name": "wundermobility/promotional-rules",
+    "description": "Apply certain promotional campaigns to give discounts.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tarique Iqbal",
+            "email": "iqbal111@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PromotionalCampaign\\": "src/PromotionalCampaign/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
