@@ -10,6 +10,7 @@ use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
 use PromotionalCampaign\Service\PromotionEngineService;
+use PromotionalCampaign\Handler\ExceptionHandler;
 
 readonly class ContainerFactory
 {
@@ -53,6 +54,12 @@ readonly class ContainerFactory
                 $c['BasketService'],
                 $c['PromotionalRulesFactory'],
                 $c['PromotionEngineService']
+            );
+        };
+
+        $container['ExceptionHandler'] = function (Container $c) {
+            return new ExceptionHandler(
+                $c['ConfigService']
             );
         };
 
