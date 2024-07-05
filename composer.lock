@@ -4,9 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "957626d2eeb7b29e8df3d96b19b84f74",
+    "content-hash": "8434611b6bc37d0e0e96b43927225d0e",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "mikey179/vfsstream",
+            "version": "v1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bovigo/vfsStream.git",
+                "reference": "7a20ce2980b8e29a11e233645071cee862b2d5d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/7a20ce2980b8e29a11e233645071cee862b2d5d0",
+                "reference": "7a20ce2980b8e29a11e233645071cee862b2d5d0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "bovigo\\vfs\\": "src",
+                    "org\\bovigo\\vfs\\": "org/bovigo/vfs"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Frank Kleine",
+                    "homepage": "http://frankkleine.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Virtual file system to mock the real file system in unit tests.",
+            "homepage": "http://vfs.bovigo.org/",
+            "support": {
+                "issues": "https://github.com/bovigo/vfsStream/issues",
+                "source": "https://github.com/bovigo/vfsStream/tree/master",
+                "wiki": "https://github.com/bovigo/vfsStream/wiki"
+            },
+            "time": "2022-02-23T02:27:25+00:00"
+        },
         {
             "name": "myclabs/deep-copy",
             "version": "1.x-dev",
