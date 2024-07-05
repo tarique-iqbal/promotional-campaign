@@ -1,3 +1,6 @@
 /.DS_Store
 /.idea
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
 /vendor/
