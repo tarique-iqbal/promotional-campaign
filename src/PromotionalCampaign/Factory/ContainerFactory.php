@@ -35,6 +35,13 @@ readonly class ContainerFactory
             );
         };
 
+        $container['PromotionalRulesFactory'] = function (Container $c) {
+            return new PromotionalRulesFactory(
+                $c['BasketService'],
+                $c['ProductRepository']
+            );
+        };
+
         return $container;
     }
 }

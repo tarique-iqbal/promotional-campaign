@@ -7,6 +7,7 @@ namespace Tests\Integration\Factory;
 use PHPUnit\Framework\TestCase;
 use Pimple\Container;
 use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Factory\PromotionalRulesFactory;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
@@ -23,5 +24,6 @@ class ContainerFactoryTest extends TestCase
         $this->assertInstanceOf(ConfigService::class, $container['ConfigService']);
         $this->assertInstanceOf(ProductRepository::class, $container['ProductRepository']);
         $this->assertInstanceOf(BasketService::class, $container['BasketService']);
+        $this->assertInstanceOf(PromotionalRulesFactory::class, $container['PromotionalRulesFactory']);
     }
 }
