@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PromotionalCampaign\Factory;
 
 use Pimple\Container;
+use PromotionalCampaign\PromotionalCampaignApplication;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
@@ -45,6 +46,14 @@ readonly class ContainerFactory
 
         $container['PromotionEngineService'] = function () {
             return new PromotionEngineService();
+        };
+
+        $container['PromotionalCampaignApplication'] = function (Container $c) {
+            return new PromotionalCampaignApplication(
+                $c['BasketService'],
+                $c['PromotionalRulesFactory'],
+                $c['PromotionEngineService']
+            );
         };
 
         return $container;
