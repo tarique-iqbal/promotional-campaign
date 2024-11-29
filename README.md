@@ -9,6 +9,17 @@ A small command-line utility to apply certain promotional campaigns to give disc
 - If you spend over €30, you get 10% off your purchase.
 - If you buy 2 or more pizzas, the price for each drops to €3.99.
 
+| Items in basket      | Total price |
+|----------------------|-------------|
+| 002,001,002,003      |   31.44 €   |
+
+| How it works?        |             |
+|----------------------|-------------|
+| 5.99+1.95+5.99+25.00 | = 38.93     |
+| 38.93−(5.99−3.99)×2  | = 34.93     |
+| 34.93−(34.93×10)÷100 | = 31.437    |
+| round(31.437, 2)     | = 31.44     |
+
 ## Test Cases
 | Items in basket | Total price |
 |-----------------|-------------|
