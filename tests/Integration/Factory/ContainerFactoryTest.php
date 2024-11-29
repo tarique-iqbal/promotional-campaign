@@ -13,6 +13,7 @@ use PromotionalCampaign\PromotionalCampaignApplication;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
+use PromotionalCampaign\Service\CurrencyManagementInterface;
 use PromotionalCampaign\Service\PromotionEngineService;
 
 class ContainerFactoryTest extends TestCase
@@ -27,6 +28,7 @@ class ContainerFactoryTest extends TestCase
         $this->assertInstanceOf(ConfigService::class, $container['ConfigService']);
         $this->assertInstanceOf(ProductRepository::class, $container['ProductRepository']);
         $this->assertInstanceOf(BasketService::class, $container['BasketService']);
+        $this->assertInstanceOf(CurrencyManagementInterface::class, $container['CurrencyManager']);
         $this->assertInstanceOf(PromotionalRulesFactory::class, $container['PromotionalRulesFactory']);
         $this->assertInstanceOf(PromotionEngineService::class, $container['PromotionEngineService']);
         $this->assertInstanceOf(PromotionalCampaignApplication::class, $container['PromotionalCampaignApplication']);

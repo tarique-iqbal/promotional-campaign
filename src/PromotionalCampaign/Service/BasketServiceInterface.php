@@ -12,7 +12,5 @@ interface BasketServiceInterface
 
     public function getTotalPrice(): float;
 
-    public function getCurrencySymbol(): string;
-
     public function decreaseTotalPrice(float $amount): void;
 }

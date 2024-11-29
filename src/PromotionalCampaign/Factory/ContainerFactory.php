@@ -9,6 +9,7 @@ use PromotionalCampaign\PromotionalCampaignApplication;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;
 use PromotionalCampaign\Service\ConfigService;
+use PromotionalCampaign\Service\CurrencyManager;
 use PromotionalCampaign\Service\PromotionEngineService;
 use PromotionalCampaign\Handler\ExceptionHandler;
 
@@ -49,9 +50,14 @@ readonly class ContainerFactory
             return new PromotionEngineService();
         };
 
+        $container['CurrencyManager'] = function () {
+            return new CurrencyManager();
+        };
+
         $container['PromotionalCampaignApplication'] = function (Container $c) {
             return new PromotionalCampaignApplication(
                 $c['BasketService'],
+                $c['CurrencyManager'],
                 $c['PromotionalRulesFactory'],
                 $c['PromotionEngineService']
             );

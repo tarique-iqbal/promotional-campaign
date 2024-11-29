@@ -8,8 +8,6 @@ use PromotionalCampaign\Repository\ProductRepositoryInterface;
 
 class BasketService implements BasketServiceInterface
 {
-    private const CURRENCY_SYMBOL = '€';
-
     private array $productCodes = [];
 
     private float $totalPrice = 0.0;
@@ -38,11 +36,6 @@ class BasketService implements BasketServiceInterface
     public function getTotalPrice(): float
     {
         return $this->totalPrice;
-    }
-
-    public function getCurrencySymbol(): string
-    {
-        return self::CURRENCY_SYMBOL;
     }
 
     public function decreaseTotalPrice(float $amount): void

@@ -6,6 +6,7 @@ namespace PromotionalCampaign;
 
 use PromotionalCampaign\Factory\PromotionalRulesFactory;
 use PromotionalCampaign\Service\BasketServiceInterface;
+use PromotionalCampaign\Service\CurrencyManagementInterface;
 use PromotionalCampaign\Service\PromotionEngineServiceInterface;
 use ReflectionException;
 
@@ -13,6 +14,7 @@ final readonly class PromotionalCampaignApplication
 {
     public function __construct(
         private BasketServiceInterface $basketService,
+        private CurrencyManagementInterface $currencyManager,
         private PromotionalRulesFactory $promotionRulesFactory,
         private PromotionEngineServiceInterface $promotionEngineService
     ) {
@@ -29,7 +31,7 @@ final readonly class PromotionalCampaignApplication
 
         $this->runPromotion();
 
-        echo $this->basketService->getCurrencySymbol()
+        echo $this->currencyManager->getCurrencySymbol()
             . round($this->basketService->getTotalPrice(), 2)
             . PHP_EOL;
     }
