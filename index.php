@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 
 ini_set('error_reporting', 'E_ALL');
 ini_set('display_errors', 'On');

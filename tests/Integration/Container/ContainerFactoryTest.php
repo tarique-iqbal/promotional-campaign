@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Integration\Factory;
+namespace Tests\Integration\Container;
 
 use PHPUnit\Framework\TestCase;
 use Pimple\Container;
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 use PromotionalCampaign\Factory\PromotionalRulesFactory;
 use PromotionalCampaign\Handler\ExceptionHandler;
 use PromotionalCampaign\PromotionalCampaignApplication;

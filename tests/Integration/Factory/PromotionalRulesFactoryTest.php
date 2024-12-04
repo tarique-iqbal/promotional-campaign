@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Integration\Factory;
 
 use PHPUnit\Framework\TestCase;
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 use PromotionalCampaign\Factory\PromotionalRulesFactory;
 use PromotionalCampaign\PromotionalRules\PromotionalRulesServiceInterface;
 

@@ -6,7 +6,7 @@ namespace Tests\Integration\PromotionRules;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 use PromotionalCampaign\PromotionalRules\BuyOverOnePizzaPromotionalRulesService;
 use PromotionalCampaign\PromotionalRules\PromotionalRulesServiceInterface;
 use PromotionalCampaign\Service\BasketServiceInterface;

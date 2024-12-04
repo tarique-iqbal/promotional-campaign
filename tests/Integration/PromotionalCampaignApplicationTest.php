@@ -6,7 +6,7 @@ namespace Tests\Integration;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 use PromotionalCampaign\PromotionalCampaignApplication;
 
 class PromotionalCampaignApplicationTest extends TestCase

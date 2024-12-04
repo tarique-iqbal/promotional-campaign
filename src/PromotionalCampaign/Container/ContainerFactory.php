@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PromotionalCampaign\Factory;
+namespace PromotionalCampaign\Container;
 
 use Pimple\Container;
+use PromotionalCampaign\Factory\PromotionalRulesFactory;
 use PromotionalCampaign\PromotionalCampaignApplication;
 use PromotionalCampaign\Repository\ProductRepository;
 use PromotionalCampaign\Service\BasketService;

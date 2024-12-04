@@ -6,7 +6,7 @@ namespace Tests\Integration\Service;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use PromotionalCampaign\Factory\ContainerFactory;
+use PromotionalCampaign\Container\ContainerFactory;
 use PromotionalCampaign\Service\BasketServiceInterface;
 
 class BasketServiceTest extends TestCase
