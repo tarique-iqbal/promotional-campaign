@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Promotional campaign providing discounts."
+  "description": "Promotional campaign providing discounts.",
+  "dependencies": {
+    "inversify": "^6.2.2",
+    "reflect-metadata": "^0.2.2"
+  }
 }
