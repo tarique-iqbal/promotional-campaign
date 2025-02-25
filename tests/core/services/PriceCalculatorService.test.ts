@@ -4,18 +4,20 @@ import { FixedDiscountPromotion } from '../../../src/core/promotions/FixedDiscou
 import { IPromotion } from '../../../src/core/interfaces/IPromotion';
 import { BuyOneGetOneFreePromotion } from '../../../src/core/promotions/BuyOneGetOneFreePromotion';
 import { BuyOverOneProductPromotion } from '../../../src/core/promotions/BuyOverOneProductPromotion';
-
-function sortPromotions(promotions: IPromotion[]): IPromotion[] {
-  return promotions.sort(
-    (a, b) => a.getExecutionOrder() - b.getExecutionOrder(),
-  );
-}
+import { sortPromotions } from '../../../src/core/utils/PromotionUtils';
 
 describe('PriceCalculatorService', () => {
   let priceCalculatorService: PriceCalculatorService;
+  let sortedPromotions: IPromotion[] = [];
 
   beforeEach(() => {
     priceCalculatorService = new PriceCalculatorService();
+    const promotions = [
+      new BuyOverOneProductPromotion('2'),
+      new FixedDiscountPromotion(5, 40),
+      new BuyOneGetOneFreePromotion('3'),
+    ];
+    sortedPromotions = sortPromotions(promotions);
   });
 
   it('should calculate the original amount', () => {
@@ -42,16 +44,13 @@ describe('PriceCalculatorService', () => {
       new Product('3', 'Pen', 30),
     ];
 
-    const promotions = [
-      new BuyOverOneProductPromotion('2'), // 7.5 off
-      new FixedDiscountPromotion(5, 40), // 5 off
-      new BuyOneGetOneFreePromotion('3'), // 30 off
-    ];
-    const sortedPromotions = sortPromotions(promotions);
+    const originalAmount =
+      priceCalculatorService.calculateOriginalAmount(products);
 
     const result = priceCalculatorService.applyPromotions(
       products,
       sortedPromotions,
+      originalAmount,
     );
 
     expect(result.originalAmount).toBe(175);
@@ -70,16 +69,13 @@ describe('PriceCalculatorService', () => {
       new Product('2', 'Shirt', 25, 22.5),
     ];
 
-    const promotions = [
-      new BuyOverOneProductPromotion('2'), // 5 off
-      new FixedDiscountPromotion(5, 40), // 5 off
-      new BuyOneGetOneFreePromotion('3'), // No discount
-    ];
-    const sortedPromotions = sortPromotions(promotions);
+    const originalAmount =
+      priceCalculatorService.calculateOriginalAmount(products);
 
     const result = priceCalculatorService.applyPromotions(
       products,
       sortedPromotions,
+      originalAmount,
     );
 
     expect(result.originalAmount).toBe(90);
@@ -95,17 +91,13 @@ describe('PriceCalculatorService', () => {
       new Product('1', 'Mouse', 40),
       new Product('2', 'Shirt', 25, 22.5),
     ];
-
-    const promotions = [
-      new BuyOverOneProductPromotion('2'), // No discount
-      new FixedDiscountPromotion(5, 40), // 5 off
-      new BuyOneGetOneFreePromotion('3'), // No discount
-    ];
-    const sortedPromotions = sortPromotions(promotions);
+    const originalAmount =
+      priceCalculatorService.calculateOriginalAmount(products);
 
     const result = priceCalculatorService.applyPromotions(
       products,
       sortedPromotions,
+      originalAmount,
     );
 
     expect(result.originalAmount).toBe(65);
@@ -116,8 +108,14 @@ describe('PriceCalculatorService', () => {
   it('should return original amount if no promotions apply', () => {
     const products = [new Product('1', 'Product A', 100)];
     const promotions: IPromotion[] = [];
+    const originalAmount =
+      priceCalculatorService.calculateOriginalAmount(products);
 
-    const result = priceCalculatorService.applyPromotions(products, promotions);
+    const result = priceCalculatorService.applyPromotions(
+      products,
+      promotions,
+      originalAmount,
+    );
 
     expect(result.originalAmount).toBe(100);
     expect(result.finalAmount).toBe(100);

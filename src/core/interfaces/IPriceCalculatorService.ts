@@ -7,5 +7,6 @@ export interface IPriceCalculatorService {
   applyPromotions(
     products: Product[],
     promotions: IPromotion[],
+    originalAmount: number,
   ): PriceCalculationResult;
 }

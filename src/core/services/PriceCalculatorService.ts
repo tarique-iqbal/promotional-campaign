@@ -14,8 +14,8 @@ export class PriceCalculatorService implements IPriceCalculatorService {
   applyPromotions(
     products: Product[],
     promotions: IPromotion[],
+    originalAmount: number,
   ): PriceCalculationResult {
-    const originalAmount = this.calculateOriginalAmount(products);
     let totalDiscount = 0;
     let totalAfterDiscounts = originalAmount;
     const calculationHistory: string[] = [];
