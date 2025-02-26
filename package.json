@@ -1,15 +1,21 @@
 {
-  "name": "promotional-campaign",
+  "name": "sales-promotion",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --ext .ts,.tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node build/src/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Promotional campaign providing discounts.",
+  "description": "Sales promotion provides discounts.",
   "dependencies": {
     "inversify": "^6.2.2",
     "reflect-metadata": "^0.2.2"
