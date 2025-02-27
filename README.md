@@ -3,16 +3,16 @@ A small command-line utility for applying promotional campaigns to offer discoun
 
 | Id | Name       | Price |
 |----|------------|-------|
-| 1  | Headphones | $50   |
-| 2  | Shirt      | $30   |
-| 3  | Sweater    | $22   |
-- If you spend over $50, you get $5 off your purchase.
+| 1  | Headphones | €50   |
+| 2  | Shirt      | €30   |
+| 3  | Sweater    | €22   |
+- If you spend over €50, you get €5 off your purchase.
 - If you buy a sweater, you get one sweater free.
-- If you buy 2 or more shirts, the price for each drops to $25.
+- If you buy 2 or more shirts, the price for each drops to €25.
 
 | Items in basket | Total | Final |
 |-----------------|-------|-------|
-| 1, 2, 2, 3, 3   | $154  | $117  |
+| 1, 2, 2, 3, 3   | €154  | €117  |
 
 | How it works?  |       |
 |----------------|-------|
@@ -50,23 +50,23 @@ $ npm run build
 
 ```shell
 $ npm run start
-Original amount: 154
+Original amount: €154
 Applied discounts:
-  Promotion 1: -$22
-  Promotion 2: -$10
-  Promotion 3: -$5
-Final amount: 117
+  Promotion 1: -€22
+  Promotion 2: -€10
+  Promotion 3: -€5
+Final amount: €117
 ```
 - OR (if using `ts-node` for development)
 
 ```shell
 $ npm run dev
-Original amount: 154
+Original amount: €154
 Applied discounts:
-  Promotion 1: -$22
-  Promotion 2: -$10
-  Promotion 3: -$5
-Final amount: 117
+  Promotion 1: -€22
+  Promotion 2: -€10
+  Promotion 3: -€5
+Final amount: €117
 ```
 
 ## Running the tests
