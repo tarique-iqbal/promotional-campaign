@@ -15,15 +15,14 @@ export class BuyOneGetOneFreePromotion implements IPromotion {
 
   apply(products: Product[]): number {
     const eligibleProducts = products.filter(
-      (p) => p.id === this.applicableProductId,
+      (product) => product.id === this.applicableProductId,
     );
 
     const count = eligibleProducts.length;
     if (count < 2) return 0;
 
     const freeItems = Math.floor(count / 2);
-    const discount = freeItems * eligibleProducts[0].price;
 
-    return discount;
+    return freeItems * eligibleProducts[0].price;
   }
 }
