@@ -18,7 +18,7 @@ export class PriceCalculatorService implements IPriceCalculatorService {
   ): PriceCalculationResult {
     let totalDiscount = 0;
     let totalAfterDiscounts = originalAmount;
-    const calculationHistory: string[] = [];
+    const basketDiscounts: number[] = [];
 
     promotions.forEach((promotion) => {
       const discount = promotion.apply(products, totalAfterDiscounts);
@@ -26,9 +26,7 @@ export class PriceCalculatorService implements IPriceCalculatorService {
       if (discount > 0) {
         totalDiscount += discount;
         totalAfterDiscounts -= discount;
-        calculationHistory.push(
-          `Promotion ${promotion.getExecutionOrder()}: -$${discount}`,
-        );
+        basketDiscounts.push(discount);
       }
     });
 
@@ -37,7 +35,7 @@ export class PriceCalculatorService implements IPriceCalculatorService {
     return {
       originalAmount,
       finalAmount,
-      calculationHistory,
+      basketDiscounts,
     };
   }
 }

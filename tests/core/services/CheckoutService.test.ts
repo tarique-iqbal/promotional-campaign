@@ -41,12 +41,7 @@ describe('CheckoutService', () => {
 
     expect(result.originalAmount).toBe(190);
     expect(result.finalAmount).toBe(145);
-
-    expect(result.calculationHistory).toEqual([
-      'Promotion 1: -$30',
-      'Promotion 2: -$10',
-      'Promotion 3: -$5',
-    ]);
+    expect(result.basketDiscounts).toEqual([30, 10, 5]);
   });
 
   it('should throw an error if the basket is empty', () => {
@@ -84,6 +79,6 @@ describe('CheckoutService', () => {
 
     expect(result.originalAmount).toBe(300);
     expect(result.finalAmount).toBe(300);
-    expect(result.calculationHistory).toEqual([]);
+    expect(result.basketDiscounts).toEqual([]);
   });
 });

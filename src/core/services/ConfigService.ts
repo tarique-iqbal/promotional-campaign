@@ -6,6 +6,7 @@ export class ConfigService {
     this.config.set('MINIMUM_SPEND_AMOUNT', 50);
     this.config.set('BOGOF_PRODUCT_ID', '3');
     this.config.set('BUY_OVER_ONE_PRODUCT_ID', '2');
+    this.config.set('CURRENCY_SYMBOL', '€');
   }
 
   get<T>(key: string): T {

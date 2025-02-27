@@ -55,11 +55,7 @@ describe('PriceCalculatorService', () => {
 
     expect(result.originalAmount).toBe(175);
     expect(result.finalAmount).toBe(132.5);
-    expect(result.calculationHistory).toEqual([
-      'Promotion 1: -$30',
-      'Promotion 2: -$7.5',
-      'Promotion 3: -$5',
-    ]);
+    expect(result.basketDiscounts).toEqual([30, 7.5, 5]);
   });
 
   it('should calculate original amount, two different discounts, and final amount', () => {
@@ -80,10 +76,7 @@ describe('PriceCalculatorService', () => {
 
     expect(result.originalAmount).toBe(90);
     expect(result.finalAmount).toBe(80);
-    expect(result.calculationHistory).toEqual([
-      'Promotion 2: -$5',
-      'Promotion 3: -$5',
-    ]);
+    expect(result.basketDiscounts).toEqual([5, 5]);
   });
 
   it('should calculate original amount, only fixed discount, and final amount', () => {
@@ -102,7 +95,7 @@ describe('PriceCalculatorService', () => {
 
     expect(result.originalAmount).toBe(65);
     expect(result.finalAmount).toBe(60);
-    expect(result.calculationHistory).toEqual(['Promotion 3: -$5']);
+    expect(result.basketDiscounts).toEqual([5]);
   });
 
   it('should return original amount if no promotions apply', () => {
@@ -119,6 +112,6 @@ describe('PriceCalculatorService', () => {
 
     expect(result.originalAmount).toBe(100);
     expect(result.finalAmount).toBe(100);
-    expect(result.calculationHistory).toEqual([]);
+    expect(result.basketDiscounts).toEqual([]);
   });
 });
