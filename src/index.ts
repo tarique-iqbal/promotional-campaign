@@ -1,7 +1,7 @@
 import { container } from './config/inversify.config';
 import { TYPES } from './config/types';
 import { BasketService } from './core/services/BasketService';
-import {ConfigService} from "./core/services/ConfigService";
+import { ConfigService } from './core/services/ConfigService';
 import { CheckoutService } from './core/services/CheckoutService';
 import { IExceptionHandler } from './core/interfaces/IExceptionHandler';
 import { Product } from './core/models/Product';
@@ -26,7 +26,7 @@ try {
   console.log(`Original amount: ${currencySymbol}${result.originalAmount}`);
   console.log('Applied discounts:');
   result.basketDiscounts.forEach((discount, index) => {
-    console.log(`  Promotion ${index + 1}: -${currencySymbol}${discount}`,);
+    console.log(`  Promotion ${index + 1}: -${currencySymbol}${discount}`);
   });
   console.log(`Final amount: ${currencySymbol}${result.finalAmount}`);
 } catch (error) {

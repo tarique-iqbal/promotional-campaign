@@ -2,7 +2,7 @@ import { TYPES } from '../../src/config/types';
 import { IPromotion } from '../../src/core/interfaces/IPromotion';
 import { FixedDiscountPromotion } from '../../src/core/promotions/FixedDiscountPromotion';
 import { BuyOneGetOneFreePromotion } from '../../src/core/promotions/BuyOneGetOneFreePromotion';
-import {BuyOverOneProductPromotion} from '../../src/core/promotions/BuyOverOneProductPromotion';
+import { BuyOverOneProductPromotion } from '../../src/core/promotions/BuyOverOneProductPromotion';
 import { BasketService } from '../../src/core/services/BasketService';
 import { CheckoutService } from '../../src/core/services/CheckoutService';
 import { PriceCalculatorService } from '../../src/core/services/PriceCalculatorService';

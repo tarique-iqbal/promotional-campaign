@@ -8,7 +8,7 @@ describe('ConsoleExceptionHandler', () => {
   });
 
   afterEach(() => {
-    consoleSpy.mockRestore(); // Restore console.error after each test
+    consoleSpy.mockRestore();
   });
 
   it('should log the error message', () => {
@@ -26,7 +26,7 @@ describe('ConsoleExceptionHandler', () => {
 
     handler.handle(error);
 
-    expect(consoleSpy).toHaveBeenCalledTimes(2); // One for error message, one for stack trace
+    expect(consoleSpy).toHaveBeenCalledTimes(2);
     expect(consoleSpy).toHaveBeenCalledWith('[ERROR]: Test error');
     expect(consoleSpy).toHaveBeenCalledWith(error.stack);
   });
@@ -37,7 +37,7 @@ describe('ConsoleExceptionHandler', () => {
 
     handler.handle(error);
 
-    expect(consoleSpy).toHaveBeenCalledTimes(1); // Only logs the error message
+    expect(consoleSpy).toHaveBeenCalledTimes(1);
     expect(consoleSpy).toHaveBeenCalledWith('[ERROR]: Test error');
   });
 });
